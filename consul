@@ -1,0 +1,8 @@
+sudo apt-get update
+sudo apt-get install unzip
+sudo cd /usr/local/bin
+sudo wget https://releases.hashicorp.com/consul/0.7.3/consul_0.7.3_linux_amd64.zip
+sudo unzip *.zip
+sudo rm *.zip
+sudo mkdir -p /etc/consul.d/{bootstrap,server,client}
+sudo mkdir /var/consul
