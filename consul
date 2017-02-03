@@ -31,8 +31,8 @@ chmod 640 /var/log/consul.log
 echo " ===> Installing Consul"
 if [[ ! -f /usr/local/bin/consul ]]; then
  pushd /tmp
-   wget https://dl.bintray.com/mitchellh/consul/0.5.2_linux_amd64.zip
-   unzip 0.5.2_linux_amd64.zip
+   wget https://releases.hashicorp.com/consul/0.7.3/consul_0.7.3_linux_amd64.zip
+   unzip consul_0.7.3_linux_amd64.zip
    mv consul /usr/local/bin
  popd
 fi
@@ -40,8 +40,8 @@ fi
 echo " ===> Installing Consul web interface"
 if [[ ! -d /opt/consul-web/dist ]]; then
  pushd /tmp
-   wget https://dl.bintray.com/mitchellh/consul/0.5.2_web_ui.zip
-   unzip -d /opt/consul-web 0.5.2_web_ui.zip
+   wget https://releases.hashicorp.com/consul/0.7.3/consul_0.7.3_web_ui.zip
+   unzip -d /opt/consul_0.7.3_web_ui.zip
    chown -R consul: /opt/consul-web
  popd
 fi
@@ -74,7 +74,6 @@ cat >/etc/consul.d/config.json <<EOF
    "bootstrap_expect": 3,
    "data_dir": "/var/lib/consul",
    "datacenter": "honolulu",
-   "encrypt": "Igap4fQTve7zt93XJ9lVQw==",
    "rejoin_after_leave": true,
    "retry_interval": "30s",
    "retry_join": [
