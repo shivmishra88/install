@@ -16,7 +16,9 @@ mkdir -p /var/lib/consul
 chown consul: /var/lib/consul
 chmod 750 /var/lib/consul
 
-mkdir -p /etc/consul.d/{bootstrap,server,client}
+mkdir -p /etc/consul.d/bootstrap
+mkdir /etc/consul.d/server
+mkdir /etc/consul.d/client
 chown consul: /etc/consul.d
 chmod 750 /etc/consul.d
 
