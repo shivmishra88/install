@@ -1,6 +1,6 @@
 # variables
 my_ip6=$(ifconfig enp2s0 | grep "inet addr" | awk '{ print substr($2,6) }')
-consul_domain="consul.vishal"
+consul_domain="consul.$HOSTNAME"
 
 #echo " ===> Updating package cache"
 #apt-get update
@@ -50,7 +50,7 @@ fi
 
 for attempt in {1..3}; do
 #  _nodes=($(dig -t txt ${consul_domain} | grep TXT | awk '{print $5}' | grep -v ^$ | sort | tr -d \"))
-_nodes=vishal
+_nodes=$HOSTNAME
 if [[ -z $_nodes ]]; then
    echo "No consul nodes found. Sleeping"
    sleep 10
