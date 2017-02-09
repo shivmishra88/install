@@ -8,7 +8,7 @@ https://tinyurl.com/sp-docker
 
 https://tinyurl.com/sp-sbt
 
-https://tinyurl.com/consul-sp
+http://tinyurl.com/sp-consul-server
 
 http://tinyurl.com/sp-consul-client
 
