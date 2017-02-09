@@ -2,14 +2,14 @@
 
 Use wget https://tinyurl.com/sp-***** ; sh sp-*****
 
-https://tinyurl.com/sp-java8
+wget https://tinyurl.com/sp-java8 ; sh sp-java8
 
-https://tinyurl.com/sp-docker
+wget https://tinyurl.com/sp-docker ; sh sp-docker
 
-https://tinyurl.com/sp-sbt
+wget https://tinyurl.com/sp-sbt ; sh sp-sbt
 
-http://tinyurl.com/sp-consul-server
+wget http://tinyurl.com/sp-consul-server ; sh sp-consul-server
 
-http://tinyurl.com/sp-consul-client
+wget http://tinyurl.com/sp-consul-client ; sh sp-consul-client
 
-https://tinyurl.com/sp-consul-bootstrap
+wget https://tinyurl.com/sp-consul-bootstrap ; sh sp-consul-bootstrap
