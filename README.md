@@ -1,4 +1,4 @@
-# install
+# Install Scripts
 
 Use wget https://tinyurl.com/sp-***** ; sh sp-*****
 
