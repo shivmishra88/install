@@ -47,7 +47,7 @@ echo "Nomad installation complete."
 #######################################
 
 sudo tee /etc/nomad.d/nomad.hcl > /dev/null <<EOF
-name       = "$$INSTANCE_ID"
+name       = "$INSTANCE_ID"
 data_dir   = "/opt/nomad/data"
 datacenter = "US-EAST-1"
 bind_addr = "0.0.0.0"
@@ -56,11 +56,11 @@ server {
   bootstrap_expect = ${nomad_server_nodes}
 }
 addresses {
-  rpc  = "$$INSTANCE_PRIVATE_IP"
-  serf = "$$INSTANCE_PRIVATE_IP"
+  rpc  = "$INSTANCE_PRIVATE_IP"
+  serf = "$INSTANCE_PRIVATE_IP"
 }
 advertise {
-  http = "$$INSTANCE_PRIVATE_IP:4646"
+  http = "$INSTANCE_PRIVATE_IP:4646"
 }
 consul {
 }
