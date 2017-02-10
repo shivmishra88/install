@@ -53,7 +53,7 @@ datacenter = "US-EAST-1"
 bind_addr = "0.0.0.0"
 server {
   enabled          = true
-  bootstrap_expect = ${nomad_server_nodes}
+  bootstrap_expect = 1
 }
 addresses {
   rpc  = "$INSTANCE_PRIVATE_IP"
