@@ -9,8 +9,8 @@ timeout 180 /bin/bash -c \
 
 NOMAD_VERSION=0.5.0-rc1
 
-instance_id_url=$HOSTNAME
-INSTANCE_ID=`curl ${instance_id_url}`
+
+INSTANCE_ID=$HOSTNAME
 INSTANCE_PRIVATE_IP=$(ifconfig eth0 | grep "inet addr" | awk '{ print substr($2,6) }')
 
 sudo apt-get -qq -y update
