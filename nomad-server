@@ -66,7 +66,9 @@ consul {
 }
 EOF
 
-sudo tee /etc/init/nomad.conf > /dev/null <<EOF
+echo " ===> Installing init script"
+
+cat >/etc/systemd/system/nomad.service <<EOF
 [Unit]
 Description=Nomad
 Documentation=https://nomadproject.io/docs/
@@ -78,10 +80,11 @@ LimitNOFILE=65536
 
 [Install]
 WantedBy=multi-user.target
+
 EOF
+echo " ===> Starting nomad"
+systemctl enable nomad.service
+systemctl daemon-reload
 
-#######################################
-# START SERVICES
-#######################################
-
-sudo service nomad start
+echo " ===> Starting nomad"
+service nomad start
