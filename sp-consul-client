@@ -63,7 +63,6 @@ cat >/etc/consul.d/config.json <<EOF
    "advertise_addr": "${my_ip6}",
    "client_addr": "0.0.0.0",
    "bind_addr": "0.0.0.0",
-   "bootstrap_expect": 1,
    "data_dir": "/var/lib/consul",
    "datacenter": "DC1",
    "rejoin_after_leave": true,
