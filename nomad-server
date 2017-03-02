@@ -37,8 +37,8 @@ sudo mv nomad /usr/bin/nomad
 sudo mkdir -pm 0600 /etc/nomad.d
 
 # setup nomad directories
-sudo mkdir -pm 0600 /opt/nomad
-sudo mkdir -p /opt/nomad/data
+sudo mkdir -pm 0600 /var/nomad
+sudo mkdir -p /var/nomad/data
 
 echo "Nomad installation complete."
 
@@ -49,7 +49,7 @@ echo "Nomad installation complete."
 sudo tee /etc/nomad.d/nomad.hcl > /dev/null <<EOF
 name       = "$INSTANCE_ID"
 data_dir   = "/opt/nomad/data"
-datacenter = "US-EAST-1"
+datacenter = "DC1"
 bind_addr = "0.0.0.0"
 server {
   enabled          = true
