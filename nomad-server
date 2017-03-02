@@ -48,7 +48,7 @@ echo "Nomad installation complete."
 
 sudo tee /etc/nomad.d/nomad.hcl > /dev/null <<EOF
 name       = "$INSTANCE_ID"
-data_dir   = "/opt/nomad/data"
+data_dir   = "/var/nomad/data"
 datacenter = "DC1"
 bind_addr = "0.0.0.0"
 server {
