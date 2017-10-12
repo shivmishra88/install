@@ -1,5 +1,5 @@
 # variables
-my_ip6=$(ifconfig enp2s0 | grep "inet addr" | awk '{ print substr($2,6) }')
+my_ip6=$(ifconfig ens4 | grep "inet addr" | awk '{ print substr($2,6) }')
 consul_domain="consul.$HOSTNAME"
 
 #echo " ===> Updating package cache"
@@ -31,22 +31,22 @@ chmod 640 /var/log/consul.log
 echo " ===> Installing Consul"
 if [[ ! -f /usr/local/bin/consul ]]; then
  pushd /tmp
-   wget https://releases.hashicorp.com/consul/0.7.4/consul_0.7.4_linux_amd64.zip
-   unzip consul_0.7.4_linux_amd64.zip
+   wget https://releases.hashicorp.com/consul/0.9.3/consul_0.9.3_linux_amd64.zip
+   unzip consul_0.9.3_linux_amd64.zip
    mv consul /usr/local/bin
  popd
 fi
 
-echo " ===> Installing Consul web interface"
-if [[ ! -d /opt/consul-web/dist ]]; then
- pushd /tmp
-   wget https://releases.hashicorp.com/consul/0.7.3/consul_0.7.3_web_ui.zip
-   mv consul_0.7.3_web_ui.zip /opt/consul-web
-   cd /opt/consul-web
-   unzip  consul_0.7.3_web_ui.zip
-   chown -R consul: /opt/consul-web
- popd
-fi
+#echo " ===> Installing Consul web interface"
+#if [[ ! -d /opt/consul-web/dist ]]; then
+# pushd /tmp
+#   wget https://releases.hashicorp.com/consul/0.7.3/consul_0.7.3_web_ui.zip
+#   mv consul_0.7.3_web_ui.zip /opt/consul-web
+#   cd /opt/consul-web
+#   unzip  consul_0.7.3_web_ui.zip
+#   chown -R consul: /opt/consul-web
+# popd
+#fi
 
 for attempt in {1..3}; do
 #  _nodes=($(dig -t txt ${consul_domain} | grep TXT | awk '{print $5}' | grep -v ^$ | sort | tr -d \"))
@@ -84,8 +84,7 @@ cat >/etc/consul.d/config.json <<EOF
    ],
    "server": true,
    "enable_syslog": true,
-   "log_level": "INFO",
-   "ui_dir": "/opt/consul-web"
+   "log_level": "INFO"
 }
 EOF
 
