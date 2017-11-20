@@ -75,7 +75,6 @@ cat >/etc/consul.d/config.json <<EOF
    "encrypt": "kyDRzkxdr82zYjcUj7Bumw==",
    "client_addr": "0.0.0.0",
    "bind_addr": "${my_ip6}",
-   "bootstrap_expect": 1,
    "data_dir": "/var/lib/consul",
    "datacenter": "PROD",
    "rejoin_after_leave": true,
