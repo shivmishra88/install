@@ -1,5 +1,5 @@
 # variables
-my_ip6=$(ifconfig ens4 | grep "inet addr" | awk '{ print substr($2,6) }')
+my_ip6=$(ifconfig bond0 | grep "inet addr" | awk '{ print substr($2,6) }')
 consul_domain="consul.$HOSTNAME"
 
 #echo " ===> Updating package cache"
