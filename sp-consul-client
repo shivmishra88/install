@@ -61,15 +61,14 @@ echo " ===> Configuring Consul"
 cat >/etc/consul.d/config.json <<EOF
 {
    "advertise_addr": "${my_ip6}",
-#  "encrypt": "RxhAy9dtZifVVhb2Xusxjg==",
+   "encrypt": "kyDRzkxdr82zYjcUj7Bumw==",
    "client_addr": "0.0.0.0",
    "bind_addr": "${my_ip6}",
-   "enable_script_checks": true,
    "data_dir": "/var/lib/consul",
    "datacenter": "dc1",
    "rejoin_after_leave": true,
    "retry_interval": "30s",
-   "retry_join": ["node1", "node2"],
+   "retry_join": ["10.10.1.61","10.10.1.63","10.10.1.65"],
    "server": false,
    "enable_syslog": true,
    "log_level": "INFO"
