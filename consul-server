@@ -75,13 +75,12 @@ cat >/etc/consul.d/config.json <<EOF
    "client_addr": "0.0.0.0",
    "bind_addr": "${my_ip6}",
    "bootstrap_expect": 1,
-   "enable_script_checks": true,
    "data_dir": "/var/lib/consul",
-   "datacenter": "DC1",
+   "datacenter": "PROD",
    "rejoin_after_leave": true,
    "retry_interval": "30s",
    "retry_join": [
-       ${_consul_nodes}
+       ${10.10.1.61,10.10.1.63,10.10.1.65}
    ],
    "server": true,
    "enable_syslog": true,
