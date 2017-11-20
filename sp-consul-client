@@ -65,7 +65,7 @@ cat >/etc/consul.d/config.json <<EOF
    "client_addr": "0.0.0.0",
    "bind_addr": "${my_ip6}",
    "data_dir": "/var/lib/consul",
-   "datacenter": "dc1",
+   "datacenter": "PROD",
    "rejoin_after_leave": true,
    "retry_interval": "30s",
    "retry_join": ["10.10.1.61","10.10.1.63","10.10.1.65"],
