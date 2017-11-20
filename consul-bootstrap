@@ -85,8 +85,7 @@ cat >/etc/consul.d/config.json <<EOF
    ],
    "server": true,
    "enable_syslog": true,
-   "log_level": "INFO",
-   "ui_dir": "/opt/consul-web"
+   "log_level": "INFO"
 }
 EOF
 
