@@ -77,7 +77,7 @@ After=network-online.target
 EnvironmentFile=-/etc/sysconfig/nomad
 Environment=GOMAXPROCS=2
 Restart=on-failure
-ExecStart=/bin/bash -ce "exec /usr/bin/nomad agent -config /etc/nomad.d/ >>/var/log/consul.log 2>&1"
+ExecStart=/bin/bash -ce "exec /usr/bin/nomad agent -config /etc/nomad.d/ >>/var/log/nomad.log 2>&1"
 ExecReload=/bin/kill -HUP
 LimitNOFILE=1048576
 LimitNPROC=infinity
