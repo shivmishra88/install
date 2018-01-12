@@ -70,7 +70,7 @@ cat >/etc/consul.d/config.json <<EOF
    "retry_interval": "30s",
    "retry_join": ["10.10.1.1","10.10.1.3","10.10.1.5"],
    "server": false,
-   "enable_syslog": true,
+   "enable_syslog": false,
    "log_level": "INFO"
 }
 EOF
