@@ -1,5 +1,5 @@
 # variables
-my_ip6=$(ifconfig bond0 | grep "inet addr" | awk '{ print substr($2,6) }')
+my_ip6=$(ifconfig ens4 | grep "inet addr" | awk '{ print substr($2,6) }')
 consul_domain="consul.$HOSTNAME"
 
 #echo " ===> Updating package cache"
@@ -28,14 +28,14 @@ touch /var/log/consul.log
 chown consul: /var/log/consul.log
 chmod 640 /var/log/consul.log
 
-#echo " ===> Installing Consul"
-#if [[ ! -f /usr/local/bin/consul ]]; then
-#pushd /tmp
-#   wget https://releases.hashicorp.com/consul/0.9.3/consul_0.9.3_linux_amd64.zip
-#   unzip consul_0.9.3_linux_amd64.zip
-#   mv consul /usr/local/bin
-# popd
-#fi
+echo " ===> Installing Consul"
+if [[ ! -f /usr/local/bin/consul ]]; then
+pushd /tmp
+   wget https://releases.hashicorp.com/consul/1.2.0/consul_1.2.0_linux_amd64.zip
+   unzip consul_1.2.0_linux_amd64.zip
+   mv consul /usr/local/bin
+ popd
+fi
 
 for attempt in {1..3}; do
 #  _nodes=($(dig -t txt ${consul_domain} | grep TXT | awk '{print $5}' | grep -v ^$ | sort | tr -d \"))
