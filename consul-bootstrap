@@ -28,22 +28,22 @@ touch /var/log/consul.log
 chown consul: /var/log/consul.log
 chmod 640 /var/log/consul.log
 
-#echo " ===> Installing Consul"
-#if [[ ! -f /usr/local/bin/consul ]]; then
-# pushd /tmp
-#   wget https://releases.hashicorp.com/consul/0.9.3/consul_0.9.3_linux_amd64.zip
-#   unzip consul_0.9.3_linux_amd64.zip
-#   mv consul /usr/local/bin
-# popd
-#fi
+echo " ===> Installing Consul"
+if [[ ! -f /usr/local/bin/consul ]]; then
+ pushd /tmp
+   wget https://releases.hashicorp.com/consul/1.2.0/consul_1.2.0_linux_amd64.zip
+   unzip consul_1.2.0_linux_amd64.zip
+   mv consul /usr/local/bin
+ popd
+fi
 
 #echo " ===> Installing Consul web interface"
 #if [[ ! -d /opt/consul-web/dist ]]; then
 # pushd /tmp
-#   wget https://releases.hashicorp.com/consul/0.7.3/consul_0.7.3_web_ui.zip
-#   mv consul_0.7.3_web_ui.zip /opt/consul-web
+#   wget https://releases.hashicorp.com/consul/1.2.0/consul_1.2.0_linux_amd64.zip
+#   mv consul_1.2.0_linux_amd64.zip /opt/consul-web
 #   cd /opt/consul-web
-#   unzip  consul_0.7.3_web_ui.zip
+#   unzip  consul_1.2.0_linux_amd64.zip
 #   chown -R consul: /opt/consul-web
 # popd
 #fi
