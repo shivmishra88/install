@@ -61,7 +61,7 @@ echo " ===> Configuring Consul"
 cat >/etc/consul.d/config.json <<EOF
 {
    "advertise_addr": "${my_ip6}",
-   "encrypt": "MhMQAegTdHoHcs9a9qlpPw==",
+   "encrypt": "vZOYuDxz4pA9EHb/MdmPyQ==",
    "client_addr": "0.0.0.0",
    "bind_addr": "${my_ip6}",
    "data_dir": "/var/lib/consul",
