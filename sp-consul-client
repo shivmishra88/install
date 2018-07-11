@@ -68,7 +68,7 @@ cat >/etc/consul.d/config.json <<EOF
    "datacenter": "DC1",
    "rejoin_after_leave": true,
    "retry_interval": "30s",
-   "retry_join": ["10.10.1.1","10.10.1.3","10.10.1.5"],
+   "retry_join": ["10.128.0.12"],
    "server": false,
    "enable_syslog": false,
    "log_level": "INFO"
