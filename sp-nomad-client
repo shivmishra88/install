@@ -53,7 +53,7 @@ datacenter = "DC1"
 bind_addr = "0.0.0.0"
 client {
   enabled = true
-  network_interface = "bond0"
+  network_interface = "ens4"
 }
 addresses {
   rpc  = "$INSTANCE_PRIVATE_IP"
